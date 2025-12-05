@@ -3,24 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HCAT – HIPAA‑Compliant Conversion Sync</title>
+  <title>HIPAA Link – HIPAA‑Compliant Conversion Sync</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    :root{
+      /* Placeholder brand colors — I can extract exact values from `hipaalink.png` if you want */
+      --brand-primary: #0b64d6;
+      --brand-dark: #073a9a;
+      --brand-accent: #ffffff;
+    }
     html { scroll-behavior: smooth; }
+    .brand-gradient { background: linear-gradient(135deg, var(--brand-primary), var(--brand-dark)); }
+    .brand-cta { background: var(--brand-primary); color: var(--brand-accent); border: 1px solid transparent; }
+    .brand-cta:hover { opacity: 0.95; }
+    .form-embed { background-color: #ffffff; max-width: 980px; margin: 0 auto; border-radius: .75rem; overflow: hidden; box-shadow: 0 10px 25px rgba(2,6,23,0.12); }
+    .form-embed iframe { width: 100%; height: 700px; border: 0; display: block; }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
   <!-- Header (icon removed, white bar) -->
   <header class="bg-white fixed w-full z-30 shadow-sm">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-6">
-      <span class="text-2xl font-bold tracking-tight text-gray-800">HCAT</span>
+      <a href="#home" class="flex items-center gap-3">
+        <img src="hipaalink.png" alt="HIPAA Link" class="h-10 sm:h-12 w-auto" />
+        <span class="text-2xl font-bold tracking-tight text-gray-800">HIPAA Link</span>
+      </a>
       <nav class="hidden md:flex items-center space-x-10 text-sm font-medium text-gray-700">
         <a href="#features" class="hover:text-indigo-600">Features</a>
         <a href="#partners" class="hover:text-indigo-600">Integrations</a>
         <a href="#pricing" class="hover:text-indigo-600">Pricing</a>
         <a href="#contact" class="hover:text-indigo-600">Contact</a>
       </nav>
-      <a href="#contact" class="hidden md:inline-block bg-indigo-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow hover:bg-indigo-700 transition">Request Demo</a>
+      <a href="#contact" class="hidden md:inline-block brand-cta text-sm font-semibold px-5 py-2.5 rounded-lg shadow transition">Request Demo</a>
       <!-- Mobile menu button -->
       <button id="navToggle" class="md:hidden text-gray-700 focus:outline-none" onclick="document.getElementById('mobileNav').classList.toggle('hidden')">
         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -33,17 +47,17 @@
         <a href="#partners" class="hover:text-indigo-600">Integrations</a>
         <a href="#pricing" class="hover:text-indigo-600">Pricing</a>
         <a href="#contact" class="hover:text-indigo-600">Contact</a>
-        <a href="#contact" class="bg-indigo-600 text-white text-center py-2 rounded-lg mt-4">Request Demo</a>
+        <a href="#contact" class="brand-cta text-center py-2 rounded-lg mt-4">Request Demo</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="bg-gradient-to-tr from-indigo-600 to-blue-600 text-white pt-48 pb-24" id="home">
+  <section class="brand-gradient text-white pt-48 pb-24" id="home">
     <div class="max-w-4xl mx-auto text-center px-4">
-      <h1 class="text-4xl sm:text-5xl font-bold mb-4">HIPAA‑Compliant Conversion Sync for Healthcare Marketers</h1>
-      <p class="text-lg opacity-90 mb-8">Sync revenue and lead outcomes directly with Google, Meta, and other ad platforms—without ever touching PHI.</p>
-      <a href="#contact" class="inline-block bg-white text-indigo-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100 transition">Request Demo</a>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">HIPAA‑Compliant Ads Conversion Tracking — Enriched with CRM Conversion Values</h1>
+      <p class="text-lg opacity-90 mb-8">Protect patient data while sending revenue‑weighted and CRM‑step enriched conversions to Google, Meta, and other ad platforms—no PHI exposed.</p>
+      <a href="#contact" class="inline-block brand-cta font-semibold px-6 py-3 rounded-full shadow hover:opacity-95 transition">Request Demo</a>
     </div>
   </section>
 
@@ -51,20 +65,20 @@
   <section id="features" class="py-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-3 gap-10">
-        <!-- Feature 1 -->
+        <!-- Main Feature 1 -->
+        <div class="bg-white rounded-2xl shadow p-6">
+          <h3 class="text-lg font-semibold mb-2">HIPAA‑Compliant Conversion Tracking</h3>
+          <p class="text-sm opacity-80">Send conversions to ad platforms without exposing PHI—signed BAA, AES‑256 encryption, and minimal data handling.</p>
+        </div>
+        <!-- Main Feature 2 -->
+        <div class="bg-white rounded-2xl shadow p-6">
+          <h3 class="text-lg font-semibold mb-2">CRM‑Enriched Conversion Values</h3>
+          <p class="text-sm opacity-80">Enrich conversions with CRM steps, revenue values, and custom fields so ad algorithms optimize toward real business value.</p>
+        </div>
+        <!-- Supporting Feature -->
         <div class="bg-white rounded-2xl shadow p-6">
           <h3 class="text-lg font-semibold mb-2">Plug‑and‑Play Integrations</h3>
-          <p class="text-sm opacity-80">Connect your CRM & ad platforms in <span class="font-medium">minutes</span>—no dev resources required.</p>
-        </div>
-        <!-- Feature 2 -->
-        <div class="bg-white rounded-2xl shadow p-6">
-          <h3 class="text-lg font-semibold mb-2">Signed BAA + AES‑256</h3>
-          <p class="text-sm opacity-80">Every account comes with a Business Associate Agreement and enterprise‑grade encryption baked in.</p>
-        </div>
-        <!-- Feature 3 -->
-        <div class="bg-white rounded-2xl shadow p-6">
-          <h3 class="text-lg font-semibold mb-2">Unlock Value‑Based Bidding</h3>
-          <p class="text-sm opacity-80">Send revenue‑weighted conversions to Google & Meta so their algorithms chase <em>profit</em>, not vanity leads.</p>
+          <p class="text-sm opacity-80">Connect CRMs and ad platforms in minutes—prebuilt connectors reduce dev work and speed deployment.</p>
         </div>
       </div>
     </div>
@@ -110,29 +124,89 @@
 
   <!-- Pricing -->
   <section id="pricing" class="py-20 bg-gray-50">
-    <div class="max-w-3xl mx-auto px-4 text-center">
+    <div class="max-w-6xl mx-auto px-4 text-center">
       <h2 class="text-2xl font-semibold mb-8">Simple, predictable pricing</h2>
-      <div class="bg-white rounded-2xl shadow p-10 inline-block text-left max-w-sm mx-auto">
-        <div class="text-center mb-6">
-          <span class="text-5xl font-bold text-indigo-600">$300</span><span class="text-xl font-medium"> / month</span>
-          <div class="text-sm opacity-80">Multi‑location discounts available</div>
+      <div class="grid sm:grid-cols-3 gap-6 items-start mt-8">
+        <!-- Single location -->
+        <div class="bg-white rounded-2xl shadow p-8">
+          <div class="text-center mb-4">
+            <div class="text-sm font-medium text-gray-500">Single Location</div>
+            <div class="text-4xl font-bold" style="color:var(--brand-primary)">$99</div>
+            <div class="text-sm opacity-80">per month</div>
+          </div>
+          <ul class="text-sm space-y-2 mb-6 text-left">
+            <li>Unlimited conversions</li>
+            <li>Signed BAA</li>
+            <li>Email support</li>
+          </ul>
+          <a href="#contact" class="block text-center font-semibold py-3 rounded-lg transition" style="background:var(--brand-primary); color:var(--brand-accent)">Get Started</a>
         </div>
-        <ul class="text-sm space-y-2 mb-6">
-          <li>Unlimited conversions</li>
-          <li>Signed BAA</li>
-          <li>Email & Slack support</li>
-        </ul>
-        <a href="#contact" class="block bg-indigo-600 text-white text-center font-semibold py-3 rounded-lg hover:bg-indigo-700 transition">Request Demo</a>
+
+        <!-- Pro -->
+        <div class="bg-white rounded-2xl shadow p-8" style="border:2px solid var(--brand-primary);">
+          <div class="text-center mb-4">
+            <div class="text-sm font-medium text-gray-500">Pro</div>
+            <div class="text-4xl font-bold" style="color:var(--brand-primary)">$299</div>
+            <div class="text-sm opacity-80">per month</div>
+          </div>
+          <ul class="text-sm space-y-2 mb-6 text-left">
+            <li>All Single Location features</li>
+            <li>Multi‑location support</li>
+            <li>Priority Email & Slack support</li>
+          </ul>
+          <a href="#contact" class="block text-center font-semibold py-3 rounded-lg transition" style="background:var(--brand-primary); color:var(--brand-accent)">Request Demo</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="bg-white rounded-2xl shadow p-8">
+          <div class="text-center mb-4">
+            <div class="text-sm font-medium text-gray-500">Enterprise</div>
+            <div class="text-4xl font-bold text-gray-800">Custom</div>
+            <div class="text-sm opacity-80">Contact us for pricing</div>
+          </div>
+          <ul class="text-sm space-y-2 mb-6 text-left">
+            <li>Custom integrations</li>
+            <li>Dedicated onboarding & SLAs</li>
+            <li>Enterprise security and compliance</li>
+          </ul>
+          <a href="#contact" class="block text-center font-semibold py-3 rounded-lg transition" style="border:1px solid var(--brand-primary); color:var(--brand-primary); background:transparent">Contact Us</a>
+        </div>
       </div>
+      <div class="text-sm opacity-80 mt-6">Multi‑location discounts available</div>
     </div>
   </section>
 
-  <!-- Trust Badges -->
+  <!-- Trust Badges (inline SVGs to avoid external-hosting issues) -->
   <section class="py-12 bg-white">
     <div class="max-w-4xl mx-auto px-4 flex flex-wrap justify-center items-center gap-10">
-      <img src="https://i.imgur.com/dx6E34S.png" alt="HIPAA Seal of Compliance" class="h-14" />
-      <img src="https://i.imgur.com/uRZc6oM.png" alt="AES‑256 Encryption" class="h-14" />
-      <img src="https://i.imgur.com/ApZa1cn.png" alt="Signed BAA" class="h-14" />
+      <div class="flex flex-col items-center gap-2">
+        <svg class="h-14 w-14" viewBox="0 0 24 24" fill="none" style="color:var(--brand-primary)" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2l7 4v5c0 5-3 9-7 11-4-2-7-6-7-11V6l7-4z" fill="currentColor" opacity="0.12"/>
+          <path d="M12 3.2L5.5 7v4.7c0 4 2.4 7.6 6.5 9.6 4.1-2 6.5-5.6 6.5-9.6V7L12 3.2z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <path d="M9.2 11.8l1.8 1.8 3.8-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="text-sm opacity-90">HIPAA Seal</div>
+      </div>
+
+      <div class="flex flex-col items-center gap-2">
+        <svg class="h-14 w-14" viewBox="0 0 24 24" fill="none" style="color:var(--brand-primary)" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="10" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <path d="M8 10V8a4 4 0 018 0v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="12" cy="15" r="1.6" fill="currentColor"/>
+        </svg>
+        <div class="text-sm opacity-90">AES‑256 Encryption</div>
+      </div>
+
+      <div class="flex flex-col items-center gap-2">
+        <svg class="h-14 w-14" viewBox="0 0 24 24" fill="none" style="color:var(--brand-primary)" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <path d="M14 2v6h6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 13h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M9 16h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M9 10h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <div class="text-sm opacity-90">Signed BAA</div>
+      </div>
     </div>
   </section>
 
@@ -140,9 +214,19 @@
   <section id="contact" class="py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
     <div class="max-w-3xl mx-auto px-4 text-center">
       <h2 class="text-2xl font-semibold mb-6">Ready to improve your metrics?</h2>
-      <p class="text-lg mb-8">Fill out the quick form below and discover how HCAT can slash CPL and boost booked patients—fast.</p>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeYeilc8mtDxaiX2IaeIbaKn4Sjj4zmNr_QtlErPvqDivmW8g/viewform?embedded=true" width="100%" height="934" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      <p class="text-lg mb-8">Fill out the quick form below and discover how HIPAA Link can slash CPL and boost booked patients—fast.</p>
+      <div class="form-embed">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeYeilc8mtDxaiX2IaeIbaKn4Sjj4zmNr_QtlErPvqDivmW8g/viewform?embedded=true" width="100%" height="960px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
     </div>
   </section>
+  
+  <!-- Copyright Footer -->
+  <footer class="py-4" style="background:var(--brand-dark); color:var(--brand-accent)">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between text-sm">
+      <div>© 2025 HIPAA Link. All rights reserved.</div>
+      <div class="opacity-80">Privacy • <a href="#contact" style="color:var(--brand-accent); text-decoration:underline">Contact</a></div>
+    </div>
+  </footer>
 </body>
 </html>
