@@ -6,14 +6,16 @@
   <title>HIPAA Link - HIPAA Compliant Conversion Sync</title>
   <meta name="description" content="Send privacy-safe, CRM-enriched conversions to Google, Meta and others. Signed BAA, AES‑256 encryption, and minimal data footprint." />
   <style>
-    :root{ --bg:#0f1724; --card:#ffffff; --muted:#6b7280; --accent:#0b64d6; --accent-dark:#073a9a; }
+    :root{ --bg:#0f1724; --card:#ffffff; --muted:#6b7280; --accent:#0b64d6; --accent-dark:#121b43; }
     *{box-sizing:border-box}
     body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;padding:0;margin:0;color:#0b1220;background:#f8fafc}
     a{color:inherit;text-decoration:none}
     .container{max-width:1100px;margin:0 auto;padding:24px}
     header{background:#fff;position:sticky;top:0;z-index:40;border-bottom:1px solid #eef2f7}
     .nav{display:flex;align-items:center;justify-content:space-between}
-    .logo{display:flex;align-items:center;gap:12px}
+    .logo{display:flex;align-items:center;gap:12px;}
+    .logo-words{white-space: nowrap;font-weight:700;font-size:3rem;color:var(--accent);letter-spacing: 3px;}
+    .logo-words:after {content: ""; display: block; width: 100%; height: 4px; background: linear-gradient(90deg, var(--accent-dark), var(--accent)); margin-top: 4px; border-radius: 2px;}
     .logo img{height:80px}
     .navlinks{display:flex;gap:18px;align-items:center;color:var(--muted);font-weight:600}
     .cta{background:var(--accent);color:#fff;padding:10px 16px;border-radius:999px;font-weight:700}
@@ -42,9 +44,11 @@
     @media (max-width:900px){
       .cols-3{grid-template-columns:1fr}
       .pricing{grid-template-columns:1fr}
+      .container{padding: 12px;}
       .navlinks{display:flex}
       .navlinks a:not(.cta){display:none}
       .logo img{height:34px}
+      .logo-words{white-space: nowrap;font-size:1.5rem;letter-spacing: 1px;}
       .hero{padding:56px 12px}
       .hero .cta{display:inline-block}
       header{position:static}
@@ -58,7 +62,7 @@
 <body>
   <header>
     <div class="container nav">
-      <a class="logo" href="#home"><img src="hipaalink-logo.png" alt="HIPAA Link" /></a>
+      <a class="logo" href="#home"><img src="hipaalink-logo-mark.png" alt="HIPAA Link" /><span class="logo-words"><span style="color:var(--accent-dark)">HIPAA</span> <span style="color:var(--accent)">LINK</span></span></a>
       <nav class="navlinks">
         <a href="#features" class="small muted">Features</a>
         <a href="#integrations" class="small muted">Integrations</a>
