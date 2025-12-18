@@ -16,7 +16,7 @@
     .logo{display:flex;align-items:center;gap:12px}
     .logo img{height:80px}
     .navlinks{display:flex;gap:18px;align-items:center;color:var(--muted);font-weight:600}
-    .cta{background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;font-weight:700}
+    .cta{background:var(--accent);color:#fff;padding:10px 16px;border-radius:999px;font-weight:700}
     .hero{background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;padding:80px 0;text-align:center}
     .hero h1{font-size:2rem;margin:0 0 12px}
     .hero p{margin:0 auto 18px;max-width:780px;color:rgba(255,255,255,.92)}
@@ -25,6 +25,7 @@
     .cols-3{grid-template-columns:repeat(3,1fr)}
     .metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:20px auto}
     .metric-card{background:rgba(255,255,255,0.08);padding:18px;border-radius:12px}
+    .sticky-footer{display:none;position:fixed;right:16px;left:auto;bottom:18px;z-index:70;justify-content:center;padding:0;background:transparent;backdrop-filter:blur(6px)}
     .card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(12,20,30,.06)}
     .muted{color:var(--muted)}
     .small{font-size:0.95rem}
@@ -41,11 +42,16 @@
     @media (max-width:900px){
       .cols-3{grid-template-columns:1fr}
       .pricing{grid-template-columns:1fr}
-      .navlinks{display:none}
+      .navlinks{display:flex}
+      .navlinks a:not(.cta){display:none}
       .logo img{height:34px}
       .hero{padding:56px 12px}
+      .hero .cta{display:inline-block}
+      header{position:static}
       .section{padding:36px 0}
       .metrics-grid{grid-template-columns:1fr}
+      .sticky-footer{display:flex}
+      .sticky-footer .cta{padding:12px 18px;border-radius:999px;box-shadow:0 10px 30px rgba(11,100,214,.14);display:inline-block}
     }
   </style>
 </head>
@@ -70,7 +76,7 @@
         <p>Send the conversion signals platforms need without exposing PHI. AES‑256 encryption, signed BAA, and CRM‑enriched values so your ads optimize toward real revenue.</p>
         <div style="display:flex;gap:12px;justify-content:center;margin-top:16px;flex-wrap:wrap">
           <a href="#contact" class="cta">Get a Demo</a>
-          <a href="#pricing" style="background:transparent;border:1px solid rgba(255,255,255,.18);color:#fff;padding:10px 14px;border-radius:10px;font-weight:700">See Pricing</a>
+          <a href="#pricing" style="background:transparent;border:1px solid rgba(255,255,255,.18);color:#fff;padding:10px 14px;border-radius:999px;font-weight:700">See Pricing</a>
         </div>
       </div>
     </section>
@@ -90,7 +96,7 @@
         <div class="grid cols-3" style="margin-top:22px">
           <div class="card">
             <h3>HIPAA Compliant Conversion Tracking</h3>
-            <p class="muted small">No PHI leaves your environment. We only use hashed or tokenized identifiers and event metadata - never names, diagnoses, or clinical details. AES‑256 in transit and at rest, signed BAA available.</p>
+            <p class="muted small">No PHI leaves your environment. We only use hashed or tokenized identifiers and event metadata - never names, diagnoses, or clinical details. AES‑256 encryption in transit and at rest, signed BAA available.</p>
           </div>
           <div class="card">
             <h3>CRM Enriched Conversion Values</h3>
@@ -276,5 +282,9 @@
   <footer>
     <div class="container small muted">© 2025 HIPAA Link. All rights reserved. • <a href="#contact" style="color:#cfe2ff">Contact</a></div>
   </footer>
+  <!-- Mobile-only sticky footer CTA -->
+  <div class="sticky-footer" aria-hidden="false">
+    <a href="#contact" class="cta" style="padding:12px 20px;border-radius:999px;box-shadow:0 10px 30px rgba(11,100,214,.14)">Get a Demo</a>
+  </div>
 </body>
 </html>
