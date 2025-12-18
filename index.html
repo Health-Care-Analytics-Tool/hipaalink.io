@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>HIPAA Link - HIPAA‑Compliant Conversion Sync</title>
+  <title>HIPAA Link - HIPAA Compliant Conversion Sync</title>
   <meta name="description" content="Send privacy-safe, CRM-enriched conversions to Google, Meta and others. Signed BAA, AES‑256 encryption, and minimal data footprint." />
   <style>
     :root{ --bg:#0f1724; --card:#ffffff; --muted:#6b7280; --accent:#0b64d6; --accent-dark:#073a9a; }
@@ -23,6 +23,8 @@
     .section{padding:64px 0}
     .grid{display:grid;gap:20px}
     .cols-3{grid-template-columns:repeat(3,1fr)}
+    .metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:20px auto}
+    .metric-card{background:rgba(255,255,255,0.08);padding:18px;border-radius:12px}
     .card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(12,20,30,.06)}
     .muted{color:var(--muted)}
     .small{font-size:0.95rem}
@@ -36,7 +38,15 @@
     .pricing{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
     .price-card{border-radius:12px;padding:20px;background:#fff;box-shadow:0 6px 18px rgba(12,20,30,.06);text-align:left}
     footer{background:#071131;color:#fff;padding:28px 0;text-align:center}
-    @media (max-width:900px){.cols-3{grid-template-columns:1fr}.pricing{grid-template-columns:1fr}.navlinks{display:none}.logo img{height:34px}.hero{padding:56px 12px}}
+    @media (max-width:900px){
+      .cols-3{grid-template-columns:1fr}
+      .pricing{grid-template-columns:1fr}
+      .navlinks{display:none}
+      .logo img{height:34px}
+      .hero{padding:56px 12px}
+      .section{padding:36px 0}
+      .metrics-grid{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
@@ -56,7 +66,7 @@
   <main>
     <section id="home" class="hero">
       <div class="container">
-        <h1>Privacy‑first conversion tracking for healthcare marketers</h1>
+        <h1>Privacy first conversion tracking for healthcare marketers</h1>
         <p>Send the conversion signals platforms need without exposing PHI. AES‑256 encryption, signed BAA, and CRM‑enriched values so your ads optimize toward real revenue.</p>
         <div style="display:flex;gap:12px;justify-content:center;margin-top:16px;flex-wrap:wrap">
           <a href="#contact" class="cta">Get a Demo</a>
@@ -176,18 +186,18 @@
       <div class="container">
         <h2 style="font-size:1.5rem;margin-bottom:12px">Results that speak</h2>
         <p style="opacity:.9;margin:0 auto 18px;max-width:720px;font-style:italic">"HIPAA Link let us feed real procedure revenue back to Google—our funnel tightened overnight." <span style="font-style:normal;font-weight:700">— CMO, DSO organization</span></p>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:20px auto">
-          <div style="background:rgba(255,255,255,0.08);padding:18px;border-radius:12px">
+        <div class="metrics-grid">
+          <div class="metric-card">
             <div style="font-size:28px;font-weight:800;margin-bottom:6px">▼ 43%</div>
-            <div style="opacity:.9">Cost per Lead</div>
+            <div style="opacity:.9">Cost‑per‑Lead</div>
           </div>
-          <div style="background:rgba(255,255,255,0.08);padding:18px;border-radius:12px">
+          <div class="metric-card">
             <div style="font-size:28px;font-weight:800;margin-bottom:6px">▲ 147%</div>
             <div style="opacity:.9">Booked Patients</div>
           </div>
-          <div style="background:rgba(255,255,255,0.08);padding:18px;border-radius:12px">
+          <div class="metric-card">
             <div style="font-size:28px;font-weight:800;margin-bottom:6px">▼ 34%</div>
-            <div style="opacity:.9">Cost per Booked Lead</div>
+            <div style="opacity:.9">Cost‑per‑Booked Lead</div>
           </div>
         </div>
       </div>
