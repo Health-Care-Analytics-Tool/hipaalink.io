@@ -1,0 +1,72 @@
+:root{ --bg:#0f1724; --card:#ffffff; --muted:#6b7280; --accent:#0b64d6; --accent-dark:#241851; }
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;padding:0;margin:0;color:#0b1220;background:#f8fafc}
+a{color:inherit;text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+header{background:#fff;position:sticky;top:0;z-index:40;border-bottom:1px solid #eef2f7}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-words{white-space: nowrap;font-weight:700;font-size:3rem;color:var(--accent);letter-spacing: 3px}
+.logo-words:after {content: ""; display: block; width: 100%; height: 4px; background: linear-gradient(90deg, var(--accent-dark), var(--accent)); margin-top: 4px; border-radius: 2px}
+.logo img{height:80px}
+.navlinks{display:flex;gap:18px;align-items:center;color:var(--muted);font-weight:600}
+.cta{background:var(--accent);color:#fff;padding:10px 16px;border-radius:999px;font-weight:700}
+.hero{background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;padding:80px 0;text-align:center}
+.hero h1{font-size:2rem;margin:0 0 12px}
+.hero p{margin:0 auto 18px;max-width:780px;color:rgba(255,255,255,.92)}
+.section{padding:64px 0}
+.grid{display:grid;gap:20px}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:20px auto}
+.metric-card{background:rgba(255,255,255,0.08);padding:18px;border-radius:12px}
+.sticky-footer{display:none;position:fixed;right:16px;left:auto;bottom:18px;z-index:70;justify-content:center;padding:0;background:transparent;backdrop-filter:blur(6px)}
+.card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(12,20,30,.06)}
+.muted{color:var(--muted)}
+.small{font-size:0.95rem}
+.logos{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center}
+.logos img{height:34px;opacity:.9}
+.logo-badge{display:inline-flex;align-items:center;gap:12px;padding:8px 12px;border-radius:10px;background:#fff;box-shadow:0 6px 18px rgba(12,20,30,.04)}
+.logo-mark{width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;background:#f1f5f9;font-weight:800;color:#111}
+.logo-label{font-weight:700;color:#0b1220}
+.how-step{display:flex;gap:14px;align-items:flex-start}
+.pill{background:#eef2ff;color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:700}
+.pricing{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+.price-card{border-radius:12px;padding:20px;background:#fff;box-shadow:0 6px 18px rgba(12,20,30,.06);text-align:left}
+footer{background:#071131;color:#fff;padding:28px 0;text-align:center}
+
+/* Leadership specific */
+.leadership{display:grid;gap:20px;grid-template-columns:1fr}
+.lead-card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 10px 30px rgba(2,6,23,.04);display:flex;gap:14px;align-items:flex-start}
+.lead-img{width:110px;height:auto;border-radius:12px;flex-shrink:0}
+
+@media (min-width:900px){
+  .cols-3{grid-template-columns:repeat(3,1fr)}
+  .pricing{grid-template-columns:repeat(3,1fr)}
+  .container{padding: 24px}
+  .navlinks{display:flex}
+  .navlinks a:not(.cta){display:inline-flex}
+  .logo img{height:80px}
+  .logo-words{white-space: nowrap;font-size:3rem;letter-spacing: 3px}
+  .hero{padding:80px 0}
+  .section{padding:64px 0}
+  .metrics-grid{grid-template-columns:repeat(3,1fr)}
+  .sticky-footer{display:none}
+}
+
+@media (max-width:900px){
+  .cols-3{grid-template-columns:1fr}
+  .pricing{grid-template-columns:1fr}
+  .container{padding: 12px}
+  .navlinks{display:flex}
+  .navlinks a:not(.cta){display:none}
+  .logo img{height:34px}
+  .logo-words{white-space: nowrap;font-size:1.5rem;letter-spacing: 1px}
+  .hero{padding:56px 12px}
+  .hero .cta{display:inline-block}
+  header{position:static}
+  .section{padding:36px 0}
+  .metrics-grid{grid-template-columns:1fr}
+  .sticky-footer{display:flex}
+  .sticky-footer .cta{padding:12px 18px;border-radius:999px;box-shadow:0 10px 30px rgba(11,100,214,.14);display:inline-block}
+  .leadership{grid-template-columns:1fr}
+}
